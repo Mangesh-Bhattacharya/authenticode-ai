@@ -1,0 +1,29 @@
+# Render deployment configuration
+version: 1
+
+services:
+  - type: web
+    name: authenticode-ai-backend
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.9.18
+    healthCheckPath: /health
+    
+  - type: redis
+    name: authenticode-ai-redis
+    region: oregon
+    plan: starter
+    
+databases:
+  - name: authenticode-ai-db
+    databaseName: authenticode_ai
+    user: authenticode_user
+    region: oregon
+    plan: starter
