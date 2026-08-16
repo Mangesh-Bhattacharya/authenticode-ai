@@ -2,6 +2,12 @@
 
 **Your Code, Verified.**
 
+> **🚧 Status: architecture/portfolio project, not a live or deployed service.**
+> `backend/main.py` imports `app.core.database`, `app.api.routes.*` (auth, detection,
+> credits, payment, history), `app.core.auth`, and `app.core.redis_client` — none of which
+> exist in this repo yet; only `app/core/config.py` is implemented. The pricing tiers below
+> describe the intended product design, not something currently purchasable.
+
 A full-stack SaaS platform that detects AI-generated code and text across any programming language using advanced AI detection APIs.
 
 ## 🚀 Features
