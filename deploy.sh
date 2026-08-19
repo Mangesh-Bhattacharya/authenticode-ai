@@ -16,7 +16,7 @@ echo "✅ Prerequisites check passed"
 # Frontend deployment
 echo ""
 echo "📦 Setting up Frontend..."
-cd frontend
+cd frontend || exit 1
 
 # Install dependencies
 echo "Installing dependencies..."
@@ -31,7 +31,7 @@ echo "✅ Frontend build completed!"
 # Backend setup
 echo ""
 echo "🐍 Setting up Backend..."
-cd ../backend
+cd ../backend || exit 1
 
 # Check if Python is available
 command -v python3 >/dev/null 2>&1 || { echo "❌ Python 3 is required but not installed. Aborting." >&2; exit 1; }
